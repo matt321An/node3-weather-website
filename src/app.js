@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // This is the configuration to connect with public folder
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -102,7 +103,7 @@ app.get('*', (req, res) => {
 })
 
 // Start the server
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
 
