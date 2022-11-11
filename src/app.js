@@ -61,13 +61,14 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({error})
         }
-        forecast(data, (error, { weather_description, temperature, feelslike } = {}) => {
+        forecast(data, (error, { weather_description, temperature, feelslike, weather_icon } = {}) => {
             if (error) {
                 return res.send({error})
             }
             res.send({
                 address: req.query.address,
                 forecast: weather_description + '. It is currently ' + temperature + ' degress out. Feelslike ' + feelslike + ' degress.',
+                weather_icon
             })
         })
     })

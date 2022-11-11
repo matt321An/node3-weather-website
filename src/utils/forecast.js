@@ -11,6 +11,7 @@ const forecast = (address, callback) => {
         } else {
             const currentWeather = body.current
             callback(undefined, {
+                weather_icon: currentWeather.weather_icons[0],
                 weather_description: currentWeather.weather_descriptions[0],
                 temperature: currentWeather.temperature,
                 feelslike: currentWeather.feelslike
